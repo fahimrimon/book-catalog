@@ -13,25 +13,25 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="hover:text-orange-400 text-black" to="/">Home</Link>
       </li>
       <li>
-        <Link to="/blogs">AllBooks</Link>
+        <Link className="hover:text-orange-400 text-black" to="/AllBooks">AllBooks</Link>
       </li>
       <li>
-          <Link to="/login">Sign Up</Link>
+          <Link className="hover:text-orange-400 text-black" to="/signup">Sign Up</Link>
       </li>
       <li>
-          <Link to="/login">Login</Link>
+          <Link className="hover:text-orange-400 text-black" to="/login">Login</Link>
       </li>
     </>
   );
   return (
     <div>
-      <div className="navbar bg-secondary ">
+      <div className="navbar bg-light border-bottom border">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-light lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
@@ -40,10 +40,10 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost text-white normal-case text-3xl">BookBazar</a>
+        <Link to='/' className="ml-6 text-black normal-case text-3xl">Book<span className="text-orange-400">Bazar</span></Link>
       </div>
-      <div className="navbar-end hidden lg:flex">
-        <ul className="text-white text-xl menu menu-horizontal p-0">{menuItems}</ul>
+      <div className="navbar-end mr-16 hidden lg:flex">
+        <ul className="text-white text-xl space-x-6 menu-horizontal p-0">{menuItems}</ul>
       </div>
     </div>
     </div>

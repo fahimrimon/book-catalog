@@ -1,0 +1,50 @@
+[
+    {
+      "_id": 1,
+      "name": "Simplicity",
+      "image": "https://i.pinimg.com/originals/a0/37/5c/a0375c143d4f5990b8baa2e439fdd15f.jpg",
+      "author": "ERNEST HEMINGWAY",
+      "genre": "History",
+      "publicatioYear": 2023
+    },
+    {
+        "_id": 2,
+        "name": "The Starlight Chronicles",
+        "image": "https://d1ldy8a769gy68.cloudfront.net/300/978/144/977/913/9/9781449779139.jpg",
+        "author": "C.S JOHNSON",
+        "genre": "Fantasy",
+        "publicationYear": 2022
+      },
+      {
+        "_id": 3,
+        "name": "Cooking Adventures",
+        "image": "https://m.media-amazon.com/images/I/91IXAEBzqOL._AC_UF1000,1000_QL80_.jpg",
+        "author": "Samantha Lee",
+        "genre": "Cooking",
+        "publicationYear": 2021
+      },
+      {
+        "_id": 4,
+        "name": "The Hobbit",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/TheHobbit_FirstEdition.jpg/220px-TheHobbit_FirstEdition.jpg",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "publicationYear": 2016
+      },
+      {
+        "_id": 5,
+        "name": "The Mind's Eye",
+        "image": "https://m.media-amazon.com/images/I/91gXV2BrNvL._AC_UF1000,1000_QL80_.jpg",
+        "author": "Jonathan Greene",
+        "genre": "Psychology",
+        "publicationYear": 2018
+      },
+      {
+        "_id": 6,
+        "name": "Mystery in the Manor",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1662055066i/61286677.jpg",
+        "author": "Sarah Thompson",
+        "genre": "Mystery",
+        "publicationYear": 2019
+      }
+  ]
