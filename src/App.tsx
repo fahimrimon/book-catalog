@@ -3,7 +3,7 @@ import MainLayout from "./layout/MainLayout"
 function App() {
 
   return (
-    <div>
+    <div className="overflow-y-hidden overflow-x-hidden">
       <MainLayout></MainLayout>
     </div>
   )

@@ -5,7 +5,7 @@
       "image": "https://i.pinimg.com/originals/a0/37/5c/a0375c143d4f5990b8baa2e439fdd15f.jpg",
       "author": "ERNEST HEMINGWAY",
       "genre": "History",
-      "publicatioYear": 2023
+      "publicationYear": 2023
     },
     {
         "_id": 2,
@@ -46,5 +46,54 @@
         "author": "Sarah Thompson",
         "genre": "Mystery",
         "publicationYear": 2019
+      },
+      {
+        "_id": 7,
+        "name": "The Chronicles of Eldoria",
+        "image": "https://us-a.tapas.io/sa/82/e342925f-a72b-4100-a645-5235f3cc5024_z.png",
+        "author": "Sarah Morgan",
+        "genre": "Fantasy",
+        "publicationYear": 2023
+      },
+      {
+        "_id": 8,
+        "name": "The Silk Roads",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1472636067i/25812847.jpg",
+        "author": "Peter Frankopan",
+        "genre": "History",
+        "publicationYear": 2015
+      },
+      {
+        "_id": 9,
+        "name": "Astrophysics for Curious Minds",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562761669i/32191710.jpg",
+        "author": "Dr. Jennifer Parker",
+        "genre": "Science",
+        "publicationYear": 2022
+      },
+      {
+        "_id": 10,
+        "name": "The Enchanted Forest",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439545607i/86238.jpg",
+        "author": "Michael Anderson",
+        "genre": "Fantasy",
+        "publicationYear": 2021
+      },
+      {
+        "_id": 11,
+        "name": "The American Revolution",
+        "image": "https://m.media-amazon.com/images/I/610fXYCIYkL._AC_UF1000,1000_QL80_.jpg",
+        "author": "Robert Middlebrook",
+        "genre": "History",
+        "publicationYear": 2018
+      },
+      {
+        "_id": 12,
+        "name": "The Gene: An Intimate History",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1452452965i/27276428.jpg",
+        "author": "Siddhartha Mukherjee",
+        "genre": "Science",
+        "publicationYear": 2016
       }
+      
   ]
