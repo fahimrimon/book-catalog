@@ -1,4 +1,5 @@
 export interface IProduct {
+    userEmail?: string | null;
     _id: number;
     name: string;
     image: string;

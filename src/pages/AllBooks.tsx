@@ -3,45 +3,24 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../types/GlobalTypes";
 import BookCard from "../components/BookCard";
+import { useGetBooksQuery } from "../redux/features/book/bookApi";
 
 function AllBooks() {
-  // const genres = [
-  //   "Mystery",
-  //   "Fantasy",
-  //   "Science Fiction",
-  //   "Historical Fiction",
-  //   "Poetry",
-  // ];
+  const {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    data: allBooks,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useGetBooksQuery(null);
 
-  // const [selectGenre, setSelectGenre] = useState("");
-  // const [searchText, setSearchText] = useState("");
-  // const [selectpublicationYear, setSelectPublicationYear] = useState("");
-
-  // // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  // const { data: allBooks, isLoading } = useGetBooksQuery({
-  //   search: searchText,
-  //   genre: selectGenre !== "" ? selectGenre : undefined,
-  //   publicationYear:
-  //     selectpublicationYear !== "" ? selectpublicationYear : undefined,
-  // });
-
-
-  // // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  // const {data} = allBooks || {};
-  // const genres = [...new Set(data?.map((item: { genre: any; }) => item.genre))];
-  // const years = [...new Set(data?.map((item: { publicationYear: any; }) => item.publicationYear))];
-
-  // if (isLoading) {
-  //   return <p>Loading</p>;
-  // }
-
-  const [data, setData] = useState<IProduct[]>([]);
-  useEffect(() => {
-    void fetch("./data.json")
-      .then((res) => res.json())
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      .then((data) => setData(data));
-  }, []);
+  // const [data, setData] = useState<IProduct[]>([]);
+  // useEffect(() => {
+  //   void fetch("./data.json")
+  //     .then((res) => res.json())
+  //     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+  //     .then((data) => setData(data));
+  // }, []);
 
   return (
     <div className="mx-20 mt-8">
@@ -93,7 +72,7 @@ function AllBooks() {
       </div>
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 my-20 gap-x-8 gap-y-8 ">
         {/* // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */}
-        {data.map((product:IProduct, i:number) => (
+        {allBooks?.data?.map((product:IProduct, i:number) => (
           <BookCard product={product} key={i}></BookCard>
         ))}
       </div>
