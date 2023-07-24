@@ -1,0 +1,5 @@
+Step-1 => Setup Store
+Step-2 => Connect redux store with react in main.tsx(Provider)
+Step-3 => Setup the custom hook(only relatable for TS usage)
+Step-4 => Create Slice(name, initialState, reducer)
+Step-5 => Connect your Slice with the redux store

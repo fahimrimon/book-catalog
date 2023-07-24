@@ -3,33 +3,47 @@ import { MdOutlineWatchLater } from 'react-icons/md';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBook } from 'react-icons/bs';
 import { IProduct } from '../types/GlobalTypes';
+import { useAppDispatch } from '../redux/hooks';
+import { addToWishlist } from '../redux/features/cart/cartSlice';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 interface IProps {
-    item: IProduct;
+    product: IProduct;
   }
 
-function BookCard({item}:IProps) {
+function BookCard({product}:IProps) {
+
+    const dispatch = useAppDispatch();
+  const handleAddProduct = (product: IProduct) => {
+    dispatch(addToWishlist(product));
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    toast('Added to wishlist');
+  };
     const [style, setStyle] = useState({display: 'none'});
     return (
         <div>
-            <div className="card lg:card-side bg-base-100 border border-light rounded-sm"  style={{backgroundColor: 'white'}}    onMouseEnter={e => {
+            <div className="card  bg-base-100 border border-light rounded-sm"  style={{backgroundColor: 'white'}}    onMouseEnter={e => {
                      setStyle({display: 'block'});
                  }}
                  onMouseLeave={e => {
                      setStyle({display: 'none'})
                  }}>
-                <figure className='w-full lg:w-24 p-2'><img className='transition duration-700 hover:scale-95 w-32 h-36' src={item.image} alt="img" /></figure>
+                <figure className='w-full  p-2'><img className='transition duration-700 hover:scale-95 w-[40%] h-52' src={product.image} alt="img" /></figure>
                     <div className="card-body">
-                         <p className="text-2xl font-serif hover:text-orange-500">{item.name}</p>
-                         <p className='text-sm text-gray-500 font-semibold'>{item.author}</p>
-                         <div className='mt-3 flex justify-between items-center'>
-                         <p className=' text-gray-700 font-semibold w-full'><span>{item.genre}</span></p>
-                         <p className='flex items-center space-x-2'><span className='text-lg'><MdOutlineWatchLater /></span><span>{item.publicationYear}</span></p>
+                         <p className="text-2xl font-serif hover:text-orange-500">{product.name}</p>
+                         <p className='text-sm text-gray-500 font-semibold'>{product.author}</p>
+                         <div className='mt-1 flex justify-between items-center'>
+                         <p className=' text-gray-700 font-semibold w-full'><span>{product.genre}</span></p>
+                         <p className='flex items-center space-x-2'><span className='text-lg'><MdOutlineWatchLater /></span><span>{product.publicationYear}</span></p>
                          </div>
                          
-                         <div className='mt-3 flex justify-between items-center mt-8'>
-                         <p className='text-xl text-blue-500 w-40'><BsBook /></p>
-                         <p className='text-xl text-orange-500'><AiOutlineHeart /></p>
+                         <div className='flex justify-between items-center mt-4'>
+                         <p title='Currently Reading' className='text-2xl text-blue-500 cursor-pointer'><BsBook /></p>
+                         <p className='w-px h-6 text-base text-center badge badge-outline capitalize cursor-pointer'>Details</p>
+                         <p onClick={() => handleAddProduct(product)} title='Wishlist' className='text-2xl text-orange-500 cursor-pointer flex justify-end'><AiOutlineHeart /></p>
+                         <ToastContainer />
                          </div>
   
                      {/* <div className="card-actions justify-end ">
