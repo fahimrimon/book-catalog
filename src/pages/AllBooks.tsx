@@ -77,7 +77,7 @@ function AllBooks() {
     <>
       {isSuccess && (
         <div className="mx-20 mt-8">
-          <h2 className="text-3xl text-center font-bold mb-6">All Books</h2>
+          <h2 className="text-3xl text-center font-bold mb-6 font-mono">All Books</h2>
           <div className="lg:flex items-center justify-center space-x-6 -mb-12">
             <p className="sm:text-center lg:mb-0 mb-4">
               <input

@@ -19,20 +19,20 @@ const routes = createBrowserRouter([
         path: '/AllBooks',
         element: <AllBooks />,
       },
-      {
-        path: '/login',
-        element: <Login />,
-      },
-      {
-        path: '/signup',
-        element: <SignUp />,
-      },
-      {
-        path: '*',
-        element: <NotFound />,
-      },
     ],
-  }
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/signup',
+    element: <SignUp />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
+  },
 ]);
 
 export default routes;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
 
   return (
-    <div className="hero bg-white">
+    <div className="hero bg-white mb-4">
       <div className="hero-content flex-col lg:flex-row-reverse text-black flex">
         <div className="flex-auto w-1/2">
           <img
