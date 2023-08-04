@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import{ useState } from 'react'
 import { MdOutlineWatchLater } from 'react-icons/md';
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -7,13 +8,14 @@ import { useAppDispatch } from '../redux/hooks';
 import { addToWishlist } from '../redux/features/cart/cartSlice';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 interface IProps {
     product: IProduct;
   }
 
 function BookCard({product}:IProps) {
-
+  const { _id, name, author, genre, publicationYear }: IProduct = product;
     const dispatch = useAppDispatch();
   const handleAddProduct = (product: IProduct) => {
     dispatch(addToWishlist(product));
@@ -41,7 +43,9 @@ function BookCard({product}:IProps) {
                          
                          <div className='flex justify-between items-center mt-4'>
                          <p title='Currently Reading' className='text-2xl text-blue-500 cursor-pointer'><BsBook /></p>
-                         <p className='w-px h-6 text-base text-center badge badge-outline capitalize cursor-pointer'>Details</p>
+                         <Link to={`/book-details/${_id}`}>
+                         <p className='px-4 text-base text-center border border-black rounded-full cursor-pointer'>Details</p>
+                         </Link>
                          <p onClick={() => handleAddProduct(product)} title='Wishlist' className='text-2xl text-orange-500 cursor-pointer flex justify-end'><AiOutlineHeart /></p>
                          <ToastContainer />
                          </div>

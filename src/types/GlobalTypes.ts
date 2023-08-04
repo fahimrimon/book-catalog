@@ -1,9 +1,10 @@
 export interface IProduct {
     userEmail?: string | null;
-    _id: number;
+    _id?: string;
     name: string;
     image: string;
     author: string;
     genre: string;
-    publicationYear: number;
+    publicationYear: string;
+    reviews?: string[]
   }

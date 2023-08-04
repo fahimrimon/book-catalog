@@ -120,7 +120,6 @@ const Login = () => {
                       Login
                     </span>
                   </button>
-                  <ToastContainer />
                   <button type="reset" className="p-3 flex justify-center mx-auto mt-2">
                     <span className="text-sm tracking-wide">
                       New to BookBazar?
@@ -129,6 +128,7 @@ const Login = () => {
                   </button>
                 </div>
               </form>
+              <ToastContainer />
             </div>
           </div>
         </div>
