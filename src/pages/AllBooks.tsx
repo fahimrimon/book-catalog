@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { IProduct } from "../types/GlobalTypes";
 import BookCard from "../components/BookCard";
 import { useGetBooksQuery } from "../redux/features/book/bookApi";

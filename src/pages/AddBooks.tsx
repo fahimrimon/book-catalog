@@ -26,10 +26,9 @@ export default function AddBooks() {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
   } = useForm<AddBookFormInputs>();
 
-  const [createBook, { isLoading, isError: resError, isSuccess }] =
+  const [createBook, { isError: resError, isSuccess }] =
     useCreateBookMutation();
 
   const onSubmit = (data: AddBookFormInputs) => {

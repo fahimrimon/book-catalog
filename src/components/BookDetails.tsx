@@ -9,7 +9,7 @@ import {
 // import DeleteBookModal from "../components/DeleteBookModal";
 // import { handleDeleteBookModal } from "../redux/features/book/bookSlice";
 import { useGetSingleBookQuery } from "../redux/features/book/bookApi";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useAppSelector } from "../redux/hooks";
 import ProductReview from "./ProductReview";
 const defaultImage =
   "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?w=2000";
@@ -24,7 +24,6 @@ export default function BookDetails() {
 
   const navigate = useNavigate();
   const { user } = useAppSelector((state) => state.user);
-  const dispatch = useAppDispatch();
   const { id } = useParams();
   const { data: book, isLoading, isError } = useGetSingleBookQuery(id);
   const { _id, title, author, genre, publicationYear, creator, image, summary } =

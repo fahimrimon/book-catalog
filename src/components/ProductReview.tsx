@@ -52,7 +52,7 @@ export default function ProductReview({ id }: IProps) {
       </form>
       <div className="mt-10">
         <h2 className='text-xl font-semibold'>Reviews</h2>
-        {data?.comments?.map((review: string, index: number) => (
+        {data?.comments?.map((review: string) => (
           <div>
           <p className="border border-gray-100 my-3"></p>
           <div className="flex items-center gap-5">

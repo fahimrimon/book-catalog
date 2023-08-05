@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import{ useState } from 'react'
 import { MdOutlineWatchLater } from 'react-icons/md';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBook } from 'react-icons/bs';
@@ -15,7 +14,7 @@ interface IProps {
   }
 
 function BookCard({product}:IProps) {
-  const { _id, name, author, genre, publicationYear }: IProduct = product;
+  const { _id }: IProduct = product;
     const dispatch = useAppDispatch();
   const handleAddProduct = (product: IProduct) => {
     dispatch(addToWishlist(product));
@@ -23,15 +22,9 @@ function BookCard({product}:IProps) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     toast('Added to wishlist');
   };
-    const [style, setStyle] = useState({display: 'none'});
     return (
         <div>
-            <div className="card  bg-base-100 border border-light rounded-sm"  style={{backgroundColor: 'white'}}    onMouseEnter={e => {
-                     setStyle({display: 'block'});
-                 }}
-                 onMouseLeave={e => {
-                     setStyle({display: 'none'})
-                 }}>
+            <div className="card  bg-base-100 border border-light rounded-sm"  style={{backgroundColor: 'white'}}>
                 <figure className='w-full  p-2'><img className='transition duration-700 hover:scale-95 w-[40%] h-52' src={product.image} alt="img" /></figure>
                     <div className="card-body">
                          <p className="text-2xl font-serif hover:text-orange-500">{product.name}</p>

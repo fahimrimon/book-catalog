@@ -7,7 +7,7 @@ import { IProduct } from "../types/GlobalTypes";
 export default function RecentBooks() {
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { data, isLoading, isError, isSuccess } = useGetLatestBooksQuery(null);
+    const { data, isLoading, isSuccess } = useGetLatestBooksQuery(null);
 
   if (isLoading) {
     return <p>Loading</p>;

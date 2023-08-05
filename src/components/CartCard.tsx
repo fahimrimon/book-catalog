@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { Link } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useAppDispatch } from "../redux/hooks";
 import { IProduct } from "../types/GlobalTypes";
 import { CiCircleRemove } from 'react-icons/ci';
 import { MdOutlineWatchLater } from 'react-icons/md';
@@ -15,7 +15,6 @@ interface IProps {
 function CartCard({product}:IProps) {
     const { _id}: IProduct = product;
     const dispatch = useAppDispatch();
-    const { user } = useAppSelector((state) => state.user);
 
   return (
     <div>
