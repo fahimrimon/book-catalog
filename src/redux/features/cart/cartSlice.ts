@@ -15,12 +15,24 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToWishlist: (state, action: PayloadAction<IProduct>) => {
-      state.books.push(action.payload);
+      const existing = state.books.find(
+        (book) => book._id === action.payload._id
+      );
+
+      if (!existing) {
+        state.books.push({ ...action.payload });
+      }
     },
     removeFromWishlist: (state, action: PayloadAction<IProduct>) => {
-      state.books = state.books.filter(
-        (book) => book._id !== action.payload._id
+      const existing = state.books.find(
+        (book) => book._id === action.payload._id
       );
+
+      if (existing) {
+        state.books = state.books.filter(
+          (book) => book._id !== action.payload._id
+        );
+      }
     },
   },
 });

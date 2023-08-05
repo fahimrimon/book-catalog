@@ -145,7 +145,7 @@ export default function AddBooks() {
             <div className="">
               <input
                 type="date"
-                placeholder="Select publication year"
+                placeholder="Enter publication year"
                 className={`border w-full outline-none py-2 px-3 ${
                   errors.publicationYear
                     ? " border-red-500 focus:border-red-500"

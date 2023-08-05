@@ -34,6 +34,13 @@ const Navbar = () => {
       {
         user.email && (
           <li>
+        <Link className="hover:text-orange-400 text-black" to="/cart">WishList</Link>
+      </li>
+        )
+      }
+      {
+        user.email && (
+          <li>
           <button onClick={handleLogOut} className="hover:text-orange-400 text-black" >Logout</button>
       </li>
         )
