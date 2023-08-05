@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ 
-    baseUrl: "http://localhost:5000",
+    baseUrl: "https://book-catalog-serverside.vercel.app",
     prepareHeaders: (headers) => {
       const token = Cookies.get("token");
       if (token) {
