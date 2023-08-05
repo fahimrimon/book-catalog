@@ -17,6 +17,14 @@ const bookApi = apiSlice.injectEndpoints({
       query: (id) => `/book/${id}`,
       providesTags: ["bookDetails"],
     }),
+    createBook: builder.mutation({
+      query: (data) => ({
+        url: "/books",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["addNewBook"],
+    }),
     postComment: builder.mutation({
       query: ({ id, data }) => ({
         url: `/comment/${id}`,
@@ -36,24 +44,13 @@ const bookApi = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ["deletepost"],
     }),
-    //   postComment: builder.mutation({
-    //     query: ({id, data}) => ({
-    //         url: `/comment/${id}`,
-    //         method: 'POST',
-    //         body: data
-    //     }),
-    //     invalidatesTags:['comments']
-    // }),
-    // getComment: builder.query({
-    //   query: (id) => `/comment/${id}`,
-    //   providesTags: ['comments']
-    // }),
   }),
 });
 
 export const {
   useGetBooksQuery,
   useGetLatestBooksQuery,
+  useCreateBookMutation,
   useGetCommentQuery,
   usePostCommentMutation,
   useGetSingleBookQuery,

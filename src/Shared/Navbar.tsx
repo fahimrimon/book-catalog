@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
-// import { useAuthState } from "react-firebase-hooks/auth";
-// import auth from "../../firebase.init";
-// import { signOut } from "firebase/auth";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { setUser } from "../redux/features/user/userSlice";
 const Navbar = () => {
-  // const [user] = useAuthState(auth);
-
-  // const handleSignOut = () => {
-  //   signOut(auth);
-  //   localStorage.removeItem('accessToken');
+  const dispatch = useAppDispatch();
+  const handleLogOut = () =>{
+    console.log('logout')
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    signOut(auth)
+    .then(() =>{
+        dispatch(setUser(null));
+    })
+  }
+  const { user } = useAppSelector((state) => state.user);
   // };
 
   const menuItems = (
@@ -18,12 +24,27 @@ const Navbar = () => {
       <li>
         <Link className="hover:text-orange-400 text-black" to="/AllBooks">AllBooks</Link>
       </li>
-      <li>
-          <Link className="hover:text-orange-400 text-black" to="/signup">Sign Up</Link>
+      {
+        user.email && (
+          <li>
+        <Link className="hover:text-orange-400 text-black" to="/addbooks">Add new</Link>
       </li>
-      <li>
+        )
+      }
+      {
+        user.email && (
+          <li>
+          <button onClick={handleLogOut} className="hover:text-orange-400 text-black" >Logout</button>
+      </li>
+        )
+      }
+      {
+        !user.email && (
+          <li>
           <Link className="hover:text-orange-400 text-black" to="/login">Login</Link>
       </li>
+        )
+      }
     </>
   );
   return (
@@ -51,3 +72,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

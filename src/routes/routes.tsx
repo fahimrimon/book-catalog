@@ -6,6 +6,7 @@ import App from '../App';
 import NotFound from '../pages/NotFound';
 import AllBooks from '../pages/AllBooks';
 import BookDetails from '../components/BookDetails';
+import AddBooks from '../pages/AddBooks';
 
 const routes = createBrowserRouter([
   {
@@ -24,14 +25,13 @@ const routes = createBrowserRouter([
         path: "/book-details/:id",
         element: (
           <BookDetails
-            _id={""}
-            image={""}
-            name={""}
-            author={""}
-            genre={""}
-            publicationYear={""}
-            reviews={[]}
           />
+        ),
+      },
+      {
+        path: "/addbooks",
+        element: (
+          <AddBooks />
         ),
       },
     ],

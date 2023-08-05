@@ -6,5 +6,6 @@ export interface IProduct {
     author: string;
     genre: string;
     publicationYear: string;
-    reviews?: string[]
+    reviews?: string[],
+    summary?: string
   }
