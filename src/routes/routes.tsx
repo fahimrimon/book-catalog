@@ -8,6 +8,7 @@ import AllBooks from '../pages/AllBooks';
 import BookDetails from '../components/BookDetails';
 import AddBooks from '../pages/AddBooks';
 import Cart from '../components/Cart';
+import PrivateRoute from '../layout/PrivateRoute';
 
 const routes = createBrowserRouter([
   {
@@ -32,13 +33,13 @@ const routes = createBrowserRouter([
       {
         path: "/addbooks",
         element: (
-          <AddBooks />
+          <PrivateRoute><AddBooks /></PrivateRoute>
         ),
       },
       {
-        path: "/cart",
+        path: "/wishlist",
         element: (
-          <Cart />
+          <PrivateRoute><Cart /></PrivateRoute>
         ),
       },
     ],

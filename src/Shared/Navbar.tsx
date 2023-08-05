@@ -34,7 +34,7 @@ const Navbar = () => {
       {
         user.email && (
           <li>
-        <Link className="hover:text-orange-400 text-black" to="/cart">WishList</Link>
+        <Link className="hover:text-orange-400 text-black" to="/wishlist">WishList</Link>
       </li>
         )
       }
